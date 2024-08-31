@@ -1,0 +1,9 @@
+
+const { PORT } = require('../config/config');
+const server = require('../index');
+
+// env port or default port
+const port = PORT || 8080;
+
+// starting the server
+server.listen(port, () => console.log(`Server running on port ${port}`));
