@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require('cors');
 const http = require('http');
+const path = require('path');
 
 
 // initializing express class
@@ -22,7 +23,7 @@ if(NODE_ENV !== 'prod') {
 }
 
 app.get('/', (req, res) => {
-    res.json({ "status": "200", "content": "Hello World" });
+    res.sendFile(path.join(__dirname, "./front-end/build/index.html"))
 })
 
 app.get('/test', (req, res) => {
